@@ -8,7 +8,8 @@ I do not own the PSIPRED software and it is crucial to note the limitations of t
 
 To use this tool, you must have the following software installed on your system:
 
-- [Docker](https://www.docker.com/)
+- [CWL tool](https://github.com/common-workflow-language/cwltool)
+- [Docker](https://www.docker.com/) OR [Singularity](https://sylabs.io/singularity/)
 
 ## Installation
 
@@ -16,16 +17,24 @@ To install and run the tool, follow these steps:
 
 1. Clone this repository to your local machine.
 2. Install Docker, if you haven't already done so.
-3. Build the Docker image by running the following command from the root of the repository:
+3. (optional) Build the Docker image by running the following command from the root of the repository:
 
     ```
     docker build -t psipred-cwl .
     ```
-
+    OR pull from the built container.
+    ```
+    docker pull ghcr.io/nihasa/psipred-4.02:nightly
+    ```
+   Note: this is only needed if you wish to access the container commands directly via docker.
 4. Run the CWL tool by running the following command from the root of the repository:
 
     ```
     cwl-runner psipred.cwl psipred.yml
+    ```
+    OR
+    ```
+    cwl-runner --singularity psipred.cwl psipred.yml
     ```
 
    This will run the PSIPRED protein secondary structure prediction software on the input sequence specified in the `psipred.yml` file.
@@ -34,7 +43,7 @@ To install and run the tool, follow these steps:
 
 To use the tool, you will need to create a YAML file specifying the input sequence and any other parameters you wish to specify. An example YAML file is provided in the `example` directory of this repository.
 
-The `psipred.cwl` file is the main workflow file that describes the steps of the PSIPRED analysis. The `psipred.yaml` file is an example input file that specifies the input sequence and any other options you wish to specify.
+The `psipred.cwl` file is the main workflow file that describes the steps of the PSIPRED analysis. The `psipred.yaml` file is an example input file that specifies the input sequence and any other options you wish to specify. The `psipred.cwl` file includes the docker specification. You can also use [Singularity](https://sylabs.io/singularity/) via the cwl-runner option `--singularity` 
 
 The output of the analysis will be written to a directory named `output` in the current working directory.
 
