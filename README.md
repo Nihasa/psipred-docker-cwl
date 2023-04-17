@@ -1,6 +1,4 @@
-# PSIPRED-4.02
-
-Container definition for PSIPRED version 4.02.# psipred-docker-cwl
+# psipred-docker-cwl
 
 This repository provides a [Common Workflow Language (CWL)](https://www.commonwl.org/) tool for running the [PSIPRED protein secondary structure prediction software](http://bioinf.cs.ucl.ac.uk/psipred/). The tool is packaged in a Docker container, allowing it to run on any system with Docker installed.
 
