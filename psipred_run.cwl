@@ -8,7 +8,7 @@ doc: |-
 
 requirements:
 - class: DockerRequirement
-  dockerPull: ghcr.io/nihasa/psipred:4.02
+  dockerPull: ghcr.io/nihasa/psipred-docker-cwl:latest
 - class: InitialWorkDirRequirement
   listing: 
   - $(inputs.blast_db_files.listing)
