@@ -33,4 +33,5 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker push ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:${{ github.sha }}
+          docker push ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:${{ github.sha }} &&
+          docker push ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:latest
