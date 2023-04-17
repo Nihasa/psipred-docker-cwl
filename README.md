@@ -24,7 +24,7 @@ To install and run the tool, follow these steps:
     ```
     OR pull from the built container.
     ```
-    docker pull ghcr.io/nihasa/psipred-docker-cwl:e7714c88d635dff47dd69143387ed31ee8e44daf
+    docker pull ghcr.io/nihasa/psipred-docker-cwl:latest
     ```
    Note: this is only needed if you wish to access the container commands directly via docker.
 4. Run the CWL tool by running the following command from the root of the repository:
